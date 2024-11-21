@@ -1,0 +1,6 @@
+@WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4_HostAddress = http://localhost:5039
+
+GET {{WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
