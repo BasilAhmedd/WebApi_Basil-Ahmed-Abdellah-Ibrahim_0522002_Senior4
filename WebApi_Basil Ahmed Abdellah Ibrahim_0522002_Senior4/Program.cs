@@ -13,7 +13,7 @@ namespace WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            //hello
             // Add services to the container.
             builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("MyCon")));
             builder.Services.AddControllers();
