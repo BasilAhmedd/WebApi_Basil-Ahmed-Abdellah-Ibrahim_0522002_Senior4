@@ -26,8 +26,11 @@ namespace WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4.Repo.CategoryRepo
         public void UpdateCategory(Category_Add_Update_DTO dto, int id)
         {
             var cat = _context.Categories.FirstOrDefault(d => d.Id == id);
+            if (cat == null)
+            {
+                throw new KeyNotFoundException("not found");
+            }
             cat.Name = dto.Name;
-
             _context.Categories.Update(cat);
             _context.SaveChanges();
 

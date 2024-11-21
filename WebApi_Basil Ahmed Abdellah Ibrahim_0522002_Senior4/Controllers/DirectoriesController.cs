@@ -16,7 +16,7 @@ namespace WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4.Controllers
             _directoryRepo = directoryRepo;
         }
         [HttpPost]
-        public IActionResult AddDirector(Director_Add_Update_DTO dto)
+        public IActionResult AddDirector(Director_add_update_movie_DTO dto)
         {
             if (ModelState.IsValid)
             {
@@ -30,7 +30,7 @@ namespace WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4.Controllers
 
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateDirector(Director_Add_Update_DTO dto,int id)
+        public IActionResult UpdateDirector(Director_add_update_movie_DTO dto,int id)
         {
             if (ModelState.IsValid) {
               

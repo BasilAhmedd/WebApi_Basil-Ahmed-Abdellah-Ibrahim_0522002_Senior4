@@ -45,6 +45,10 @@ namespace WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4.Repo.MovieRepo
         public void Delete(int id)
         {
             var movie = _context.Movies.FirstOrDefault(x => x.Id == id);
+            if (movie == null)
+            {
+                throw new KeyNotFoundException("not found");
+            }
             _context.Movies.Remove(movie);
             _context.SaveChanges();
         }

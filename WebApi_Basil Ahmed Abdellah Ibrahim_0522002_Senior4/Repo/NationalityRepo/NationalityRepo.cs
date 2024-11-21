@@ -25,6 +25,10 @@ namespace WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4.Repo.NationalityRe
         public void DeleteNation(int id)
         {
             var Nation = _context.Nationalities.FirstOrDefault(x => x.Id == id);
+            if (Nation == null)
+            {
+                throw new KeyNotFoundException("not found");
+            }
             _context.Nationalities.Remove(Nation);
             _context.SaveChanges();
         }

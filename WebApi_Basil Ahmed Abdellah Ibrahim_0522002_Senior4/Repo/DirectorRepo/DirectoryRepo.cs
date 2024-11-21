@@ -13,7 +13,7 @@ namespace WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4.Repo.DirectorRepo
         {
             _context = context;
         }
-        public void AddDirectory(Director_Add_Update_DTO dto)
+        public void AddDirectory(Director_add_update_movie_DTO dto)
         {
             var Director = new Director
             {
@@ -43,10 +43,13 @@ namespace WebApi_Basil_Ahmed_Abdellah_Ibrahim_0522002_Senior4.Repo.DirectorRepo
                throw new KeyNotFoundException();
             }
         }
-        public void UpdateDirectory(Director_Add_Update_DTO dto, int id)
+        public void UpdateDirectory(Director_add_update_movie_DTO dto, int id)
         {
             var directoryy = _context.Directors.Include(x=>x.Movies).FirstOrDefault(d => d.Id == id);
-
+            if (directoryy == null)
+            {
+                throw new KeyNotFoundException("not found");
+            }
 
             directoryy.Contact = dto.Contact;
             directoryy.Email = dto.Email;
